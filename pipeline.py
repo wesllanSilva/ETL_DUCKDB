@@ -73,7 +73,7 @@ def salvar_no_postgres(df_duckdb, tabela):
     df_duckdb.to_sql(tabela, con=engine, if_exists='append', index=False)
 
 
-if __name__ == "__main__":
+def pipeline():
     url_pasta = 'https://drive.google.com/drive/folders/1QIrSU88_aAxeVagZ-fiU-8jtKTR0xs3x'
     diretorio_local = './pasta_gdown'
     # baixar_arquivos_google_drive(url_pasta,diretorio_local)
@@ -91,3 +91,6 @@ if __name__ == "__main__":
             print(f"Arquivo {nome_arquivo} processado e salvo.")
         else:
             print(f"Arquivo {nome_arquivo} já foi processado anteriormente.")
+
+if __name__ == "__main__":
+    pipeline()
